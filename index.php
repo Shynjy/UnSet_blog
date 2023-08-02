@@ -5,3 +5,7 @@ include_once 'funcoes.php';
 
 // teste de criação de url
 echo url('admin');
+
+echo '</br>';
+
+echo dataAtual();

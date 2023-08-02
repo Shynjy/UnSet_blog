@@ -22,3 +22,45 @@ function url(string $url): string
 
   return str_starts_with($url, '/') ? $ambiente . $url : $ambiente . '/' . $url;
 }
+
+/**
+ * Entrega uma string com a data atual
+ * @return string
+ */
+function dataAtual(): string
+{
+  $diaMes = date('d');
+  $diaSemana = date('w');
+  $mes = date('n');
+  $ano = date('Y');
+
+  $dias_da_semana =
+    [
+      'Domingo',
+      'Segunda-Feira',
+      'Terça-Feira',
+      'Quarta-Feira',
+      'Quinta-Feira',
+      'Sexta-Feira',
+      'Sábado'
+    ];
+
+  $meses = [
+    1 => 'Janeiro',
+    'Fevereiro',
+    'Março',
+    'Abril',
+    'Maio',
+    'Junho',
+    'Julho',
+    'Agosto',
+    'Setembro',
+    'Outubro',
+    'Novembro',
+    'Dezembro'
+  ];
+
+  $dataFormatada = $dias_da_semana[$diaSemana] . ', ' . $diaMes . ' de ' . $meses[$mes] . ' de ' . $ano;
+
+  return $dataFormatada;
+}
